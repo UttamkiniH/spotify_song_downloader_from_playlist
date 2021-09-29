@@ -2,7 +2,7 @@ import json
 import sqlite3
 
 def addToDB() :
-    conn = sqlite3.connect(r'C:\Users\vital\OneDrive\Desktop\ENGINEERING\python\song downloader\spotify\songDataBase.sqlite', check_same_thread=False)
+    conn = sqlite3.connect(r'<your database pathname>', check_same_thread=False)
     cur = conn.cursor()
 
     try :
@@ -20,8 +20,8 @@ def addToDB() :
     except Exception as e :
         pass
 
-    with open(r'C:\Users\vital\OneDrive\Desktop\ENGINEERING\python\song downloader\spotify\toDownload.json', 'r') as fd :
-        conn = sqlite3.connect(r'C:\Users\vital\OneDrive\Desktop\ENGINEERING\python\song downloader\spotify\songDataBase.sqlite', check_same_thread=False)
+    with open(r'<your json path name>', 'r') as fd :
+        conn = sqlite3.connect(r'<your database>', check_same_thread=False)
         cur = conn.cursor()
         SongDict = json.load(fd)
         for artists, titles in SongDict.items() :
