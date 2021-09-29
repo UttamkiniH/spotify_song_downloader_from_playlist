@@ -20,7 +20,7 @@ def downloadAllSongs() :
     p = pprint.PrettyPrinter(indent=4)
     # with open('../spotify/toDownload.json', 'r') as fd :
     #     SongDict = json.load(fd)
-    conn = sqlite3.connect(r'C:\Users\vital\OneDrive\Desktop\ENGINEERING\python\song downloader\spotify\songDataBase.sqlite', 
+    conn = sqlite3.connect(r'<your database name>', 
                                 check_same_thread=False)
     cur = conn.cursor()
     cur.execute(
