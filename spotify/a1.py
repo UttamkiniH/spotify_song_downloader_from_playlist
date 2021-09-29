@@ -2,8 +2,8 @@ import json
 
 import tekore as tk
 
-client_id = '7cfedd8d098e4c0999279f490724b0c9'
-client_secret = '85ae732f98c74c0bb62b584647df7156'
+client_id = '<your client id>'
+client_secret = '<your client secret>'
 redirect_uri = 'https://example.com/callback/'
 
 def setting_spotify_Object(client_id, client_secret, redirect_uri):
@@ -25,14 +25,14 @@ spotify = setting_spotify_Object(client_id, client_secret, redirect_uri)
 def getAllNames():
     global spotify # to use global variable spotify 
     try :
-        items = spotify.playlist_items('4d3JNEzPpLo9nrDhQLtVkt')
+        items = spotify.playlist_items('<your playlist id>')
         tracks = spotify.all_items(items)
     except :
         print('Token expired')
         spotify = setting_spotify_Object(client_id, client_secret, redirect_uri)
-        items = spotify.playlist_items('4d3JNEzPpLo9nrDhQLtVkt')
+        items = spotify.playlist_items('<your playlist id>')
         tracks = spotify.all_items(items)
-    with open(r'C:\Users\vital\OneDrive\Desktop\ENGINEERING\python\song downloader\spotify\toDownload.json', 'w') as fd :
+    with open(r'<your path to songs.json>', 'w') as fd :
         songDict = {}
         for track in tracks :
             print(track.track.name, end="---->")
